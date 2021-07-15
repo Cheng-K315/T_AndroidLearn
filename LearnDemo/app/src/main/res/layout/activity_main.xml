@@ -24,5 +24,12 @@
         android:text="跳转到第三个Activity"
         android:background="@drawable/bg_button"
         android:layout_marginTop="5dp"/>
+    <Button
+        android:id="@+id/btn_fourthActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转到第四个Activity"
+        android:background="@drawable/bg_button"
+        android:layout_marginTop="5dp"/>
 
 </LinearLayout>

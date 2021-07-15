@@ -9,12 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.StaticBroadcastReceiver">
-        <activity android:name=".MainActivity"
+        <receiver
+            android:name=".MyStaticReceiver">
+            <intent-filter>
+                <action android:name="com.learn.staticbroadcastreceiver.STATIC_RECEIVER"/>
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".MainActivity"
             android:label="微信">
             <intent-filter>
-                <action android:name="com.learn.staticbroadcastreceiver.STATIC_RECEIVER" />
-
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

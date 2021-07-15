@@ -1,4 +1,4 @@
-package com.learn.learndemo;
+ package com.learn.learndemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +14,7 @@ public class MainActivity extends BaseActivity {
     private Button mBtn_secondActivity;
     private Button mBtn_thirdActivity;
     private Button mBtn_mainActivity;
+    private Button mBtn_fourthActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class MainActivity extends BaseActivity {
         mBtn_secondActivity = (Button)findViewById(R.id.btn_secondActivity);
         mBtn_thirdActivity = (Button)findViewById(R.id.btn_thirdActivity);
         mBtn_mainActivity = (Button)findViewById(R.id.btn_mainActivity);
+        mBtn_fourthActivity = (Button)findViewById(R.id.btn_fourthActivity);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -45,6 +47,9 @@ public class MainActivity extends BaseActivity {
                 case R.id.btn_thirdActivity :
                     intent = new Intent(MainActivity.this,ThirdActivity.class);
                     break;
+                case R.id.btn_fourthActivity :
+                    intent = new Intent(MainActivity.this,FourthActivity.class);
+                    break;
             }
             startActivity(intent);
         }
@@ -56,6 +61,7 @@ public class MainActivity extends BaseActivity {
         mBtn_secondActivity.setOnClickListener(onClick);
         mBtn_thirdActivity.setOnClickListener(onClick);
         mBtn_mainActivity.setOnClickListener(onClick);
+        mBtn_fourthActivity.setOnClickListener(onClick);
     }
 
     //Activity生命周期

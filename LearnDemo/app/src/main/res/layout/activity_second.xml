@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <TextView
+        android:id="@+id/tv_battery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="这是第二个Activity"
@@ -15,18 +16,27 @@
         android:layout_height="wrap_content"
         android:text="跳转到第三个Activity"
         android:layout_marginTop="10dp"/>
-    <Button
-        android:id="@+id/btn_dialog"
+    <EditText
+        android:id="@+id/et_sendInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="获取当前电量"
+        android:hint="向微信发送消息"
         android:layout_marginTop="10dp"/>
     <Button
         android:id="@+id/btn_sendBroadcast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发送"
+        android:background="@drawable/bg_button"
+        android:onClick="sendBroadcast"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"/>
+    <Button
+        android:id="@+id/btn_sendOrderBroadcast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="向微信发送消息"
-        android:onClick="sendBroadcast"
+        android:text="发送有序广播"
+        android:onClick="sendOrderBroadcast"
         android:layout_marginTop="10dp"/>
 
 </LinearLayout>

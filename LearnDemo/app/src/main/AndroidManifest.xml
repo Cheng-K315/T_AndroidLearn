@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.learn.learndemo">
 
-    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+    <uses-permission android:name="android.permission.BATTERY_STATS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <permission
+        android:name="com.learn.learndemo.permission.USE_DICT"
+        android:protectionLevel="normal" />
 
     <application
         android:allowBackup="true"
@@ -11,9 +16,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LearnDemo">
-        <receiver android:name=".BatteryReceiver"></receiver>
 
-        <activity android:name=".DialogActivity" />
+        <provider
+            android:name=".FirstProvider"
+            android:authorities="com.learn.learndemo.firstprovider"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ResultActivity" />
+
+        <provider
+            android:name=".DictProvider"
+            android:authorities="com.learn.learndemo.dictprovider"
+            android:exported="true"
+            android:permission="com.learn.learndemo.permission.USE_DICT" />
+
+        <activity
+            android:name=".FourthActivity"
+            android:permission="com.learn.learndemo.permission.USE_DICT" />
+
+        <service android:name=".TestStartService">
+            <intent-filter>
+                <action android:name="com.learn.learndemo.myservice" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".DefaultLevelReceiver">
+            <intent-filter android:priority="0">
+                <action android:name="com.learn.learndemo.ORDERED_RECEIVER" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".LowLevelReceiver">
+            <intent-filter android:priority="-1000">
+                <action android:name="com.learn.learndemo.ORDERED_RECEIVER" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".HighLevelReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="com.learn.learndemo.ORDERED_RECEIVER" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".BootCompleteReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
         <activity
             android:name=".ThirdActivity"
@@ -25,7 +72,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".SecondActivity"
             android:label="第二个Activity页面"
@@ -36,7 +82,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:label="QQ"
