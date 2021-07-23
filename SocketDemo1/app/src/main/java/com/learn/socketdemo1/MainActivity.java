@@ -2,7 +2,13 @@ package com.learn.socketdemo1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Service;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -14,32 +20,63 @@ import java.net.Socket;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String TAG = "MainActivity";
+    private SocketServer.MyBinder myBinder;
+
+    ServiceConnection conn = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            Log.d(TAG,"----Service Connected----");
+            myBinder = (SocketServer.MyBinder)service;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            Log.d(TAG,"-----Service Disconnected----");
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button server = (Button)findViewById(R.id.btn_server);
         Button accept = (Button)findViewById(R.id.btn_accept);
         accept.setOnClickListener(this);
+        server.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
+        switch (v.getId()){
+            case R.id.btn_accept:
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Log.d("MainActivity","--->Socket通信");
+                            acceptServer();
+                        }catch (IOException e){
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+                break;
+            case R.id.btn_server:
+                Intent intent = new Intent(MainActivity.this,SocketServer.class);
+                bindService(intent,conn, Service.BIND_AUTO_CREATE);
                 try {
-                    acceptServer();
-                }catch (IOException e){
+                    myBinder.serverSocket();
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }
-        }).start();
+        }
+
     }
 
     private void acceptServer() throws IOException {
         //创建客户端Socket,指定服务器端的地址和端口
-        Socket socket = new Socket("172.16.2.54",12345);
+        Socket socket = new Socket("10.1.23.108",12345);
 
         //获取输出流,向服务器端发送信息
         OutputStream os = socket.getOutputStream();  //字节输出流

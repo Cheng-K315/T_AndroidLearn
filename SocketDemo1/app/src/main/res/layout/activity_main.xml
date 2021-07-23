@@ -7,11 +7,19 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btn_server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="启动服务端"
+        android:textAllCaps="false"
+        android:textSize="20sp"/>
+    <Button
         android:id="@+id/btn_accept"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Socket通信"
         android:textAllCaps="false"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:layout_below="@+id/btn_server"/>
 
 </RelativeLayout>
