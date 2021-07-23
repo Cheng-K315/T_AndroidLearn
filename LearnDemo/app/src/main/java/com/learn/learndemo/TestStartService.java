@@ -12,7 +12,7 @@ public class TestStartService extends Service {
     private int count;
     private boolean quit;
 
-    //定义onBinder方法所返回的对象
+    //定义onBind方法所返回的对象
     private MyBinder binder = new MyBinder();
     public class MyBinder extends Binder{
         public int getCount(){

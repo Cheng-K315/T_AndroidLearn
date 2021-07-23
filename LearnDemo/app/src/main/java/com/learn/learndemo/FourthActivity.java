@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -67,7 +68,7 @@ public class FourthActivity extends BaseActivity {
                 Intent intent = new Intent(FourthActivity.this, ResultActivity.class);
                 intent.putExtra("bundle",bundle);
                 Log.d("FourthActivity",""+converCursorToList(cursor));
-//                startActivity(intent);
+                startActivity(intent);
             }
         });
     }

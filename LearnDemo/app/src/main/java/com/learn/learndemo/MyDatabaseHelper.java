@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 
 public class MyDatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String CREATE_usersDB = "create table dict(_id integer primary key autoincrement, word , detail)";/*"create table " + Words.TABLE_NAME +
+    private static final String CREATE_usersDB = "create table dict(_id integer primary key autoincrement, word varchar(30), detail varchar(32))";/*"create table " + Words.TABLE_NAME +
             "(" + Words.Word._ID +
             " integer primary key autoincrement," +Words.Word.WORD+
             " varchar(30)," + Words.Word.DETAIL +
@@ -24,7 +24,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         //调用SQLiteDatabase中的execSQL（）执行建表语句。
         db.execSQL(CREATE_usersDB);
-        Log.d("MtDatabaseHelper","创建成功!");
+        Log.d("MyDatabaseHelper","创建成功!");
     }
 
     @Override

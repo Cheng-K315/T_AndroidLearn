@@ -18,7 +18,7 @@ public class ResultActivity extends BaseActivity {
         TextView resultText = findViewById(R.id.tv_result);
         Intent intent = getIntent();
         Bundle bundle = intent.getBundleExtra("bundle");
-        Serializable data = bundle.getSerializable("date");
+        Serializable data = bundle.getSerializable("data");
         resultText.setText(""+data);
     }
 }
