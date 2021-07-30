@@ -5,21 +5,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+    <Button
+        android:id="@+id/btn_bind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bind Service"
+        android:textAllCaps="false"
+        android:textSize="20sp"/>
+    <Button
+        android:id="@+id/btn_unbind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Unbind Service"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:layout_below="@id/btn_bind"/>
     <Button
         android:id="@+id/btn_server"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="启动服务端"
+        android:text="TCPSocket服务端"
         android:textAllCaps="false"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:layout_below="@id/btn_unbind"/>
     <Button
-        android:id="@+id/btn_accept"
+        android:id="@+id/btn_client"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Socket通信"
+        android:text="TCPSocket客户端"
         android:textAllCaps="false"
         android:textSize="20sp"
         android:layout_below="@+id/btn_server"/>
+
+    <Button
+        android:id="@+id/btn_udpServer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UDPSocket服务端"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:layout_below="@+id/btn_client"/>
+    <Button
+        android:id="@+id/btn_udpClient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UDPSocket客户端"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:layout_below="@+id/btn_udpServer"/>
 
 </RelativeLayout>

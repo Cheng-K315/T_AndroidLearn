@@ -28,8 +28,7 @@
         <provider
             android:name=".DictProvider"
             android:authorities="com.learn.learndemo.dictprovider"
-            android:exported="true"
-            android:permission="com.learn.learndemo.permission.USE_DICT" />
+            android:exported="true" />
 
         <activity
             android:name=".FourthActivity"
