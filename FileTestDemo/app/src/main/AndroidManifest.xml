@@ -13,14 +13,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FileTestDemo">
         <activity android:name=".AQLiteActivity">
+        </activity>
+        <activity android:name=".SharedPreferencesActivity">
+
+        </activity>
+
+        <activity android:name=".MainActivity">
             <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SharedPreferencesActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

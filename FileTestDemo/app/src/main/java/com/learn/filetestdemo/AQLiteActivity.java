@@ -35,7 +35,7 @@ public class AQLiteActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a_q_lite);
-        dh = new MyDatabaseHelper(this,"my.db3",null,1);
+        dh = new MyDatabaseHelper(AQLiteActivity.this,"my1.db3",null,1);
         bindViews();
     }
 
@@ -61,7 +61,7 @@ public class AQLiteActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        SQLiteDatabase db = dh.getReadableDatabase();
+        SQLiteDatabase db = dh.getWritableDatabase();
         String id = et_id.getText().toString();
         switch (v.getId()){
             case R.id.clean:
@@ -73,18 +73,18 @@ public class AQLiteActivity extends AppCompatActivity implements View.OnClickLis
                 String title = et_title.getText().toString().trim();
                 String text = et_text.getText().toString().trim();
                 ContentValues values = new ContentValues();
+//                values.put("_id",id);
                 values.put("news_title",title);
                 values.put("news_content",text);
                 db.insert("news",null,values);
                 Toast.makeText(getApplicationContext(),"插入数据成功！",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_delete:
+                Log.d("Main","hhhh");
                 db.beginTransaction();
-                ContentValues upid = new ContentValues();
-                upid.put("_id","_id"+(-1));
                 try {
                     db.delete("news","_id like ?",new String[]{id});
-                    db.update("news",upid,"_id not like ?",new String[]{"1"});
+                    db.execSQL("update news set _id=_id-1 where _id not like 1");
                     db.setTransactionSuccessful();
                 }finally {
                     db.endTransaction();
@@ -98,6 +98,7 @@ public class AQLiteActivity extends AppCompatActivity implements View.OnClickLis
                 values1.put("news_title",title1);
                 values1.put("news_content",text1);
                 db.update("news",values1,"_id like ?",new String[]{id});
+                Toast.makeText(getApplicationContext(),"修改成功！",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_search:
                 Cursor cursor = db.query("news",null,"_id like ?",new String[]{id},null,null,null);

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,12 +22,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btn_clean;
     private Button btn_read;
     private SDFileHelper sdFileHelper;
+    private FileHelper fileHelper;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        sdFileHelper = new SDFileHelper(context);
+        context = getApplicationContext();
+        fileHelper = new FileHelper(context);
         bindViews();
     }
 
@@ -36,14 +41,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_save = (Button)findViewById(R.id.btn_save);
         btn_read = (Button)findViewById(R.id.btn_read);
         btn_clean = (Button)findViewById(R.id.btn_clean);
-        sdFileHelper = new SDFileHelper();
 
         btn_save.setOnClickListener(this);
         btn_clean.setOnClickListener(this);
         btn_read.setOnClickListener(this);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -56,8 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String filecontent = et_content.getText().toString();
 
                 try {
-                    requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},0x123);
-                    sdFileHelper.saveFileToSD(filename,filecontent);
+                    fileHelper.save(filename,filecontent);
                     Toast.makeText(getApplicationContext(),"写入数据成功！",Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -68,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String content = null;
                 String filename1 = et_name.getText().toString();
                 try {
-                     content= sdFileHelper.readFromSD(filename1);
+                     content= fileHelper.read(filename1);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

@@ -28,7 +28,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="保存到SD卡"
+        android:text="写入"
         android:id="@+id/btn_save"/>
     <Button
         android:layout_width="wrap_content"
@@ -38,6 +38,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="读取SD卡中的文件内容"
+        android:text="读取"
         android:id="@+id/btn_read"/>
 </LinearLayout>
