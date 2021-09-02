@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
@@ -62,13 +63,18 @@ public class FourthActivity extends BaseActivity {
                 String id = mEt_id.getText().toString();
                 //执行查询
                 Cursor cursor = contentResolver.query(Words.Word.DICT_CONTENT_URI,null,"word like ? or detail like ?",new String[]{"%" + id + "%","%" + id + "%"},null);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("data",converCursorToList(cursor));
-
-                Intent intent = new Intent(FourthActivity.this, ResultActivity.class);
-                intent.putExtra("bundle",bundle);
-                Log.d("FourthActivity",""+converCursorToList(cursor));
-                startActivity(intent);
+                SimpleCursorAdapter adapter = new SimpleCursorAdapter(FourthActivity.this,R.layout.activity_result,cursor,
+                        new String[]{"word","detail"},
+                        new int[]{R.id.tv_word,R.id.tv_detail});
+                ListView listView = findViewById(R.id.list);
+                listView.setAdapter(adapter);
+//                Bundle bundle = new Bundle();
+//                bundle.putSerializable("data",converCursorToList(cursor));
+//
+//                Intent intent = new Intent(FourthActivity.this, ResultActivity.class);
+//                intent.putExtra("bundle",bundle);
+//                Log.d("FourthActivity",""+converCursorToList(cursor));
+//                startActivity(intent);
             }
         });
     }

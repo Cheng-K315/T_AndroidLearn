@@ -15,10 +15,10 @@ public class ResultActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        TextView resultText = findViewById(R.id.tv_result);
-        Intent intent = getIntent();
-        Bundle bundle = intent.getBundleExtra("bundle");
-        Serializable data = bundle.getSerializable("data");
-        resultText.setText(""+data);
+//        TextView resultText = findViewById(R.id.tv_result);
+//        Intent intent = getIntent();
+//        Bundle bundle = intent.getBundleExtra("bundle");
+//        Serializable data = bundle.getSerializable("data");
+//        resultText.setText(""+data);
     }
 }

@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements Fragment1.CallBack {
+public class MainActivity extends AppCompatActivity  {
 
     private TextView tv_content;
     private Button btn_commit;
@@ -50,9 +50,12 @@ public class MainActivity extends AppCompatActivity implements Fragment1.CallBac
             }
         });
     }
-    @Override
-    public void getResult(String result) {
-        tv_content.setText(result);
-        Toast.makeText(getApplicationContext(),"-->"+result,Toast.LENGTH_SHORT).show();
-    }
+
+
+//    @Override
+//    public void getResult(String result) {
+//        tv_content.setText(result);
+//        Toast.makeText(getApplicationContext(),"-->"+result,Toast.LENGTH_SHORT).show();
+//    }
+
 }

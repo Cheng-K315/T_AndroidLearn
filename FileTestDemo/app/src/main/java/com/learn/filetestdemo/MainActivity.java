@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 et_content.setText("");
                 break;
             case R.id.btn_save:
+                Log.d("Main","asasdsd");
                 String filename = et_name.getText().toString();
                 String filecontent = et_content.getText().toString();
 

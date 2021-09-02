@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:text="忘记密码"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="270dp"/>
+        android:layout_marginLeft="290dp"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -49,7 +49,7 @@
             android:text="注册"
             android:textColor="#fff"
             android:textSize="15sp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="35dp"
             android:background="@drawable/bg_register"/>
         <Button
             android:id="@+id/btn_login"
@@ -68,7 +68,7 @@
             android:background="@drawable/line"
             android:layout_below="@+id/btn_register"
             android:layout_marginTop="70dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="30dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -96,7 +96,7 @@
             android:textSize="15sp"
             android:layout_below="@id/iv_line"
             android:drawableTop="@drawable/wx"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="48dp"
             android:layout_marginTop="20dp"/>
         <TextView
             android:id="@+id/tv_qq"
@@ -126,7 +126,7 @@
             android:id="@+id/tv_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="网易云公司版权所有网易云公司版权所有网易云公司版权所有"
+            android:text="网易云公司版权所有网易云公司版权所有网易云公司版权所有网易云公司版权所有"
             android:textColor="#fff"
             android:layout_below="@id/tv_qq"
             android:shadowColor="#aa5"
@@ -134,11 +134,12 @@
             android:shadowDx="5"
             android:shadowDy="5"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="43dp"
             android:singleLine="true"
             android:ellipsize="marquee"
             android:marqueeRepeatLimit="marquee_forever"
             android:focusable="true"
+            android:clickable="true"
             android:focusableInTouchMode="true"/>
     </RelativeLayout>
 

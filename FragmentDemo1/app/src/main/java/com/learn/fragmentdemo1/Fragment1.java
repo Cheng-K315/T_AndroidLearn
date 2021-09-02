@@ -54,7 +54,7 @@ public class Fragment1 extends Fragment {
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
 
-                callBack.getResult(info);
+//                callBack.getResult(info);
             }
         });
         return view;
@@ -63,10 +63,13 @@ public class Fragment1 extends Fragment {
     public  interface CallBack{
         void getResult(String result);
     }
-
-    @Override
-    public void onAttach(@NonNull Activity activity) {
-        super.onAttach(activity);
-        callBack = (CallBack)getActivity();
+//    CallBack callBack;
+    public void getData(){
+        callBack.getResult(info);
     }
+//    @Override
+//    public void onAttach(@NonNull Activity activity) {
+//        super.onAttach(activity);
+//        callBack = (CallBack)getActivity();
+//    }
 }

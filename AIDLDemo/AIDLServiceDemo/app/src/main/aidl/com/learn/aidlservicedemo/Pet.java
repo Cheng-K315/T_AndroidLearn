@@ -70,6 +70,6 @@ public class Pet implements Parcelable
     @Override
     public String toString()
     {
-        return "Pet [name=" + name + ", weight=" + weight + "]";
+        return "个人信息 [name=" + name + ", weight=" + weight + "]";
     }
 }

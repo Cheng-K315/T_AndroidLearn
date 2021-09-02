@@ -3,6 +3,7 @@ package com.learn.testjni;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        System.out.println("============>"+new JNIUtils().hello());
+        TextView textView = findViewById(R.id.tv_txt);
+        textView.setText(JNIUtils.hello());
     }
 }

@@ -21,4 +21,5 @@
     <queries>
         <package android:name="com.learn.aidlservicedemo"/>
     </queries>
+
 </manifest>

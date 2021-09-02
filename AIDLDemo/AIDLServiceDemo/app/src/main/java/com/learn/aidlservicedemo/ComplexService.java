@@ -28,6 +28,10 @@ public class ComplexService extends Service
         ArrayList<Pet> list1 = new ArrayList<Pet>();
         list1.add(new Pet("旺财" , 4.3));
         list1.add(new Pet("来福" , 5.1));
+        list1.add(new Pet("张三" , 1));
+        list1.add(new Pet("李四" , 3));
+        list1.add(new Pet("小王" , 4));
+        list1.add(new Pet("小红" , 5.1));
         pets.put(new Person(1, "sun" , "sun") , list1);
         ArrayList<Pet> list2 = new ArrayList<Pet>();
         list2.add(new Pet("kitty" , 2.3));
