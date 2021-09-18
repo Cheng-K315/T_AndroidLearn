@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Service.CountIncomeByMonth">
+
+    <LinearLayout
+        android:id="@+id/ll_line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
+        <LinearLayout
+            android:id="@+id/ll_spring"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp">
+            <com.example.myapplication5.View.CircleProgressBar
+                android:id="@+id/cpbar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/tv_springIncome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="春季收入: 1000元"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_summer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <com.example.myapplication5.View.CircleProgressBar2
+                android:id="@+id/cpbar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/tv_summerIncome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="夏季收入: 1000元"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/ll_line1"
+        android:layout_marginTop="30dp">
+        <LinearLayout
+            android:id="@+id/ll_autumn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp">
+            <com.example.myapplication5.View.CircleProgressBar3
+                android:id="@+id/cpbar3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/tv_autumnIncome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="秋季收入: 1000元"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_winter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <com.example.myapplication5.View.CircleProgressBar4
+                android:id="@+id/cpbar4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/tv_winterIncome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="冬季收入: 1000元"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

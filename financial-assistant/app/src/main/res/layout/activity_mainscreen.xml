@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray">
+
+    <GridLayout
+        android:id="@+id/gl_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:columnCount="3"
+        android:layout_centerHorizontal="true">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_marginTop="60dp">
+            <ImageButton
+                android:id="@+id/imgbtn_outNew"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/new_out"/>
+            <TextView
+                android:layout_below="@+id/imgbtn_outNew"
+                android:layout_alignLeft="@+id/imgbtn_outNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新增支出"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_marginTop="60dp">
+            <ImageButton
+                android:id="@+id/imgbtn_inNew"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/new_in"/>
+            <TextView
+                android:layout_below="@+id/imgbtn_inNew"
+                android:layout_alignLeft="@+id/imgbtn_inNew"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新增收入"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:layout_marginTop="60dp">
+            <ImageButton
+                android:id="@+id/imgbtn_myOutcome"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/out"/>
+            <TextView
+                android:layout_below="@+id/imgbtn_myOutcome"
+                android:layout_alignLeft="@+id/imgbtn_myOutcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的支出"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp">
+            <ImageButton
+                android:id="@+id/imgbtn_myIncome"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/in"/>
+            <TextView
+                android:layout_below="@+id/imgbtn_myIncome"
+                android:layout_alignLeft="@+id/imgbtn_myIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的收入"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp">
+            <ImageButton
+                android:id="@+id/imgbtn_dataManagement"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/data_manage"/>
+            <TextView
+                android:layout_below="@+id/imgbtn_dataManagement"
+                android:layout_alignLeft="@+id/imgbtn_dataManagement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="数据管理"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp">
+            <ImageButton
+                android:id="@+id/imgbtn_settings"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/settings"/>
+            <TextView
+                android:layout_below="@+id/imgbtn_settings"
+                android:layout_alignLeft="@+id/imgbtn_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="系统设置"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp">
+            <ImageButton
+                android:id="@+id/imgbtn_tips"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/tip"/>
+            <TextView
+                android:layout_below="@+id/imgbtn_tips"
+                android:layout_alignLeft="@+id/imgbtn_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收支便签"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp">
+            <ImageButton
+                android:id="@+id/imgbtn_exit"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/exit"/>
+            <TextView
+                android:layout_below="@+id/imgbtn_exit"
+                android:layout_alignLeft="@+id/imgbtn_exit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="     退出"/>
+        </RelativeLayout>
+
+    </GridLayout>
+
+
+
+</RelativeLayout>

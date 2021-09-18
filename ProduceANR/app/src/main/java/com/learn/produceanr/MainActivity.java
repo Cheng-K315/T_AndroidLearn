@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 SystemClock.sleep(2000);
                 Intent intent = new Intent("anr_test");
+                intent.putExtra("info","huaadsfasf");
                 sendBroadcast(intent);
             }
         }).start();
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     public void produceANRBySystemBroadCast(View view) {
         IntentFilter filter = new IntentFilter();
         filter.addAction("anr_test");
-        filter.addAction(Intent.ACTION_TIME_TICK);
+        filter.addAction(Intent.ACTION_BATTERY_CHANGED);
         registerReceiver(registerReceiver, filter);
     }
 
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
     public void produceANRByBroadCastHandle(View view) {
         IntentFilter filter = new IntentFilter();
         filter.addAction("anr_test");
-        filter.addAction(Intent.ACTION_TIME_TICK);
+        filter.addAction(Intent.ACTION_SCREEN_OFF);
         registerReceiver(registerReceiver, filter);
     }
 
@@ -111,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             sleepTest();
+            Toast.makeText(MainActivity.this,"收到广播!",Toast.LENGTH_SHORT).show();
         }
     }
 

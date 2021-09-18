@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Service.CountOutcomeByMonthActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
+        <LinearLayout
+            android:id="@+id/ll_spring"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp">
+            <com.example.myapplication5.View.CircleProgressBar11
+                android:id="@+id/cpbar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/tv_springOutcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="春季支出: 1000元"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_summer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp">
+            <com.example.myapplication5.View.CircleProgressBar22
+                android:id="@+id/cpbar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/tv_summerOutcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="夏季支出: 1000元"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/ll_line1"
+        android:layout_marginTop="30dp">
+        <LinearLayout
+            android:id="@+id/ll_autumn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp">
+            <com.example.myapplication5.View.CircleProgressBar33
+                android:id="@+id/cpbar3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/tv_autumnOutcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="秋季支出: 1000元"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_winter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp">
+            <com.example.myapplication5.View.CircleProgressBar44
+                android:id="@+id/cpbar4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/tv_winterOutcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="冬季支出: 1000元"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

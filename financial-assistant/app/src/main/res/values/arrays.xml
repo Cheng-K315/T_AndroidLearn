@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    样式1 dropdown 下拉框-->
+    <string-array name="outCome">
+        <item></item>
+        <item>餐饮</item>
+        <item>交通</item>
+        <item>娱乐</item>
+        <item>购物</item>
+    </string-array>
+<!--    样式2 dialog 对话框-->
+    <string-array name="InCome">
+        <item></item>
+        <item>外快</item>
+        <item>兼职</item>
+        <item>工资</item>
+        <item>津贴</item>
+    </string-array>
+
+    <string-array name="Role">
+        <item></item>
+        <item>用户</item>
+        <item>管理员</item>
+    </string-array>
+</resources>

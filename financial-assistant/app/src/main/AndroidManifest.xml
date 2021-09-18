@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication5">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo1"
+        android:label="理财小助手"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/ThemeBlue">
+        <activity android:name=".Service.TipsManageActivity"
+            android:label="查询便签"></activity>
+        <activity android:name=".Service.MapActivity"></activity>
+        <activity
+            android:name=".Service.ZheXianTu"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".Service.CountOutcomeByMonthActivity"
+            android:label="季节支出"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".Service.CountIncomeByMonth"
+            android:label="季节收入"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".Service.AdminActivity"
+            android:label="后台管理系统"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".Father.MyActivity"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="系统设置"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".Service.DataManageActivity"
+            android:label="数据管理"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".MyOutcomeActivity"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".NewOutcomeActivity" />
+        <activity
+            android:name=".NewTipsActivity"
+            android:label="添加便签" />
+        <activity android:name=".MyIncomeActivity" />
+        <activity android:name=".NewIncomeActivity"/>
+        <activity
+            android:name=".LoginActivity"
+            android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainScreenActivity"
+            android:launchMode="singleInstance" />
+    </application>
+
+</manifest>

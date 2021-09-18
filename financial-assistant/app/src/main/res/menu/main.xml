@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.myapplication5.Service.CountIncomeByMonth" >
+
+    <!--
+    	android:orderInCategory="100"数值越大级别越小，可设置来排位置
+    	android:title="登录" 文字
+    	app:showAsAction="always"显示方式
+    	always：总是显示在界面上
+		never：不显示在界面上，只让出现在右边的三个点中
+		ifRoom：如果有位置才显示，不然就出现在右边的三个点中
+     -->
+    <item
+        android:id="@+id/enter"
+        android:orderInCategory="100"
+        android:title="最近一年"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/setting"
+        android:orderInCategory="100"
+        android:title="最近四月"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/out"
+        android:orderInCategory="100"
+        android:title="最近四周"
+        app:showAsAction="never" />
+
+</menu>
