@@ -67,6 +67,7 @@ public class MyIncomeActivity extends MyActivity {
                         String sql = "delete from income where _id="+id_selected;
                         System.out.println(sql);
                         dbprocess2.execSql(sql);
+                        dbprocess2.execSql("update income set _id=_id-1 where _id>"+id_selected);
                         Toast.makeText(MyIncomeActivity.this,"删除成功，请刷新页面查看",Toast.LENGTH_SHORT).show();
 
                     }
@@ -113,12 +114,29 @@ public class MyIncomeActivity extends MyActivity {
         switch (item.getItemId()) {
             case R.id.refresh:
                 Toast.makeText(this,"刷新页面",Toast.LENGTH_SHORT).show();
+                onResume();
+//                Intent intent = new Intent(this,MyIncomeActivity.class);
+//                startActivity(intent);
 //                明天接着做
-                mListView.invalidate();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        while (!Thread.currentThread().isInterrupted()) {
+                            try {
+                                Thread.sleep(100);
+                            }
+                            catch (InterruptedException e) {
+                                Thread.currentThread().interrupt();
+                            }
+                            // 使用postInvalidate可以直接在线程中更新界面
+                            mListView.postInvalidate();
+                        }
+                    }
+                }).start();
+//                mListView.postInvalidate();
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
-
 
 }

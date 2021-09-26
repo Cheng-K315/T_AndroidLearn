@@ -23,13 +23,15 @@ public class MyHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 //        建用户表
-        db.execSQL("create table outcome(_id integer primary key autoincrement,name varchar(20) not null,money varchar(20) not null" +
+        db.execSQL("create table outcome(_id integer primary key,name varchar(20) not null,money varchar(20) not null" +
                 ",date varchar(20) not null,class varchar(20) not null,location varchar(20) not null,comment varchar(50) not null)");
-        db.execSQL("create table income(_id integer primary key autoincrement,name varchar(20) not null,money varchar(20) not null" +
+        db.execSQL("create table income(_id integer primary key,name varchar(20) not null,money varchar(20) not null" +
                 ",date varchar(20) not null,class varchar(20) not null,payer varchar(20) not null,comment varchar(50) not null)");
         db.execSQL("create table tips(_id integer primary key autoincrement,name varchar(20) not null,info varchar(50) not null)");
         db.execSQL("create table user(name varchar(20) primary key not null,password varchar(20) not null,role varchar(20) not null)");
         System.out.println("数据库表创建成功！");
+        //数据库创建的同时创建一个管理员
+        db.execSQL("insert into user(name,password,role) values('admin','admin','管理员')");
     }
 
 //    数据库更新

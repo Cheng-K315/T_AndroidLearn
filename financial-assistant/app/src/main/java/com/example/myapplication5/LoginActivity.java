@@ -58,8 +58,8 @@ private ImageView imgHead;
             }
         });
 //        创建一个管理员
-        String sql = "insert into user(name,password,role) values('admin','admin','管理员')";
-        dbprocess2.execSql(sql);
+//        String sql = "insert into user(name,password,role) values('admin','admin','管理员')";
+//        dbprocess2.execSql(sql);
     }
 
 //  旋转动画

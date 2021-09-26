@@ -56,9 +56,10 @@ public class MyOutcomeActivity extends MyActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 //                       删除一条记录
-                        String sql = "delete from income where _id="+id_selected;
+                        String sql = "delete from outcome where _id="+id_selected;
                         System.out.println(sql);
                         dbprocess2.execSql(sql);
+                        dbprocess2.execSql("update outcome set _id=_id-1 where _id>"+id_selected);
                         Toast.makeText(MyOutcomeActivity.this,"删除成功，请刷新页面查看",Toast.LENGTH_SHORT).show();
 
                     }

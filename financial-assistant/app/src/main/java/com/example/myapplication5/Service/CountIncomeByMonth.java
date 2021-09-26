@@ -2,6 +2,9 @@ package com.example.myapplication5.Service;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,8 +15,10 @@ import android.widget.Toast;
 
 import com.example.myapplication5.Father.MyActivity;
 import com.example.myapplication5.LoginActivity;
+import com.example.myapplication5.MainScreenActivity;
 import com.example.myapplication5.R;
 import com.example.myapplication5.Utils.CurrentTime;
+import com.example.myapplication5.Utils.SPSaveInfo;
 import com.example.myapplication5.View.CircleProgressBar;
 
 import java.util.ArrayList;
@@ -100,7 +105,11 @@ public class CountIncomeByMonth extends MyActivity {
 
         mMax = springSeason+summerSeason+autumnSeason+winterSeason;
         System.out.println("总收入: "+mMax);
+
+//        将总收入存入SharePreferences
+        SPSaveInfo.saveTotalIncome(this,"total_income", mMax);
     }
+
     private int countByMonth(int year,int month){
         String sql = "select sum(income.money) as money from income where name ='"+ LoginActivity.name +"' and date like '%"+year+"-"+month+"-%'";
         System.out.println(sql);

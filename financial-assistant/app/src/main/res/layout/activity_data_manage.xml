@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Service.DataManageActivity">
+    tools:context=".Service.DataManageActivity"
+    android:background="#ff9">
     <com.example.myapplication5.View.ShanView
         android:id="@+id/shanView_countIncomeByClasses"
         android:layout_width="match_parent"
@@ -85,5 +86,6 @@
         android:textSize="20dp"
         android:layout_centerInParent="true"
         android:gravity="center"
-        android:textColor="@color/blue_bg"/>
+        android:textColor="@color/blue_bg"
+        />
 </RelativeLayout>

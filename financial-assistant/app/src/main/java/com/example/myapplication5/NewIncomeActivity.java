@@ -1,5 +1,6 @@
 package com.example.myapplication5;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +8,8 @@ import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.myapplication5.Father.MyActivity;
+import com.example.myapplication5.Utils.CurrentTime;
 import com.example.myapplication5.Utils.MyHelper;
 import com.example.myapplication5.Utils.StringUtils;
 import com.example.myapplication5.Utils.dbProcess2;
@@ -37,6 +41,7 @@ public class NewIncomeActivity extends MyActivity implements View.OnClickListene
 //    private Spinner spClass;
     private AlertDialog dialog;
     private String classes = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

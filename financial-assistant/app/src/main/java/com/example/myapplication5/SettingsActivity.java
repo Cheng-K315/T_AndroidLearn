@@ -22,7 +22,7 @@ public class SettingsActivity extends MyActivity implements View.OnClickListener
     private EditText etPassword;
     private Button btnSave;
     private RelativeLayout MoreBg,MoreVersion,MoreCache,MoreShare,MorePassword;
-    private TextView tvPink,tvGreen,tvBlue;
+    private TextView tvPink,tvGreen,tvBlue,tvWhite;
     SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +51,8 @@ public class SettingsActivity extends MyActivity implements View.OnClickListener
         tvPink = findViewById(R.id.pink_bg);
         tvGreen = findViewById(R.id.green_bg);
         tvBlue = findViewById(R.id.blue_bg);
+        tvWhite = findViewById(R.id.begin_bg);
+        tvWhite.setOnClickListener(this);
         tvPink.setOnClickListener(this);
         tvGreen.setOnClickListener(this);
         tvBlue.setOnClickListener(this);
@@ -84,6 +86,9 @@ public class SettingsActivity extends MyActivity implements View.OnClickListener
             case R.id.rl_more_share:
                 break;
             case R.id.rl_more_password:
+                Intent intent = new Intent(this,ChangePasswordActivity.class);
+                startActivity(intent);
+                /*
 //                gone 不占位 invisible 占位
                 if(v.isSelected()){
 //                    点击显示
@@ -94,6 +99,7 @@ public class SettingsActivity extends MyActivity implements View.OnClickListener
                     v.setSelected(true);
                     llNewPassword.setVisibility(View.GONE); // int类型
                 }
+                 */
                 break;
             case R.id.btn_save:
                 System.out.println("1");
@@ -113,6 +119,13 @@ public class SettingsActivity extends MyActivity implements View.OnClickListener
                     dbprocess2.execSql(sql);
                     Toast.makeText(this,"修改成功",Toast.LENGTH_SHORT).show();
                 }
+                break;
+            case R.id.begin_bg:
+                Intent intent0 = new Intent(this,MainScreenActivity.class);
+                SharedPreferences.Editor editor0 = sp.edit();
+                editor0.putString("bg_prefs","white");
+                editor0.commit();
+                startActivity(intent0);
                 break;
             case R.id.pink_bg:
                 Intent intent1 = new Intent(this,MainScreenActivity.class);

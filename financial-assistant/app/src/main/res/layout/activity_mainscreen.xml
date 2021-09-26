@@ -4,8 +4,45 @@
     android:layout_height="match_parent"
     android:background="@color/light_gray">
 
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:background="#bfefff">
+        <TextView
+            android:id="@+id/total_income"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/income"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:text="总收入"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="理财通"
+            android:gravity="center_horizontal"
+            android:textSize="25sp"
+            android:drawableTop="@drawable/head3"/>
+        <TextView
+            android:id="@+id/total_outcome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/outcome"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:text="总支出"/>
+    </LinearLayout>
+
     <GridLayout
         android:id="@+id/gl_menu"
+        android:layout_below="@+id/l1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"

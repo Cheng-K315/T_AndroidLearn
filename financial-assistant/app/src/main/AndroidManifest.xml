@@ -6,12 +6,15 @@
         android:allowBackup="true"
         android:icon="@drawable/logo1"
         android:label="理财小助手"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo1"
         android:supportsRtl="true"
         android:theme="@style/ThemeBlue">
-        <activity android:name=".Service.TipsManageActivity"
-            android:label="查询便签"></activity>
-        <activity android:name=".Service.MapActivity"></activity>
+        <activity android:name=".ChangePasswordActivity"
+            android:label="修改密码"></activity>
+        <activity
+            android:name=".Service.TipsManageActivity"
+            android:label="查询便签" />
+        <activity android:name=".Service.MapActivity" />
         <activity
             android:name=".Service.ZheXianTu"
             android:launchMode="singleInstance" />
@@ -41,13 +44,12 @@
         <activity
             android:name=".MyOutcomeActivity"
             android:launchMode="singleInstance" />
-        <activity
-            android:name=".NewOutcomeActivity" />
+        <activity android:name=".NewOutcomeActivity" />
         <activity
             android:name=".NewTipsActivity"
             android:label="添加便签" />
         <activity android:name=".MyIncomeActivity" />
-        <activity android:name=".NewIncomeActivity"/>
+        <activity android:name=".NewIncomeActivity" />
         <activity
             android:name=".LoginActivity"
             android:launchMode="singleInstance">

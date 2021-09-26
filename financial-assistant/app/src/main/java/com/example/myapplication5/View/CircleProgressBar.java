@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import com.example.myapplication5.Service.CountIncomeByMonth;
@@ -57,6 +58,7 @@ public class CircleProgressBar extends View {
 //        背景颜色
         mBackPaint = new Paint();
         mBackPaint.setColor(Color.WHITE);
+        //设置是否使用抗锯齿功能，会消耗较大资源，绘制图形速度会变慢。
         mBackPaint.setAntiAlias(true);
         mBackPaint.setStyle(Paint.Style.STROKE);
         mBackPaint.setStrokeWidth(mStrokeWidth);
@@ -97,7 +99,7 @@ public class CircleProgressBar extends View {
 //        int speed = 1;
         if (mProgress < mPercentage) {
             mProgress += 1;
-            invalidate();
+            invalidate();  //绘制刷新
             try {
 //                休眠,控制速度
                 Thread.sleep(10);

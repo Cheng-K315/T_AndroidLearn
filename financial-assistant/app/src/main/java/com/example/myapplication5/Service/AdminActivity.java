@@ -4,8 +4,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +19,7 @@ public class AdminActivity extends MyActivity {
     EditText etName, etPassword, etRole;
     Button btnAdd, btnDelete, btnUpdate, btnSearch;
     TextView tvShow;
+    public static String role = null; //角色 管理员/用户
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +27,13 @@ public class AdminActivity extends MyActivity {
         setContentView(R.layout.activity_admin);
         initView();
         addListener();
+        initSpinner();//下拉列表初始化
     }
 
     private void initView() {
         etName = findViewById(R.id.et_name);
         etPassword = findViewById(R.id.et_password);
-        etRole = findViewById(R.id.et_role);
+//        etRole = findViewById(R.id.et_role);
         btnAdd = findViewById(R.id.btn_add);
         btnDelete = findViewById(R.id.btn_delete);
         btnUpdate = findViewById(R.id.btn_update);
@@ -43,7 +48,7 @@ public class AdminActivity extends MyActivity {
             public void onClick(View v) {
                 String name = etName.getText().toString().trim();
                 String password = etPassword.getText().toString().trim();
-                String role = etRole.getText().toString().trim();
+//                String role = etRole.getText().toString().trim();
                 String sql = "insert into user(name,password,role) values('"+name+"','"+password+"','"+role+"')";
                 System.out.println(sql);
                 dbprocess2.execSql(sql);
@@ -102,4 +107,35 @@ public class AdminActivity extends MyActivity {
             }
         });
     }
+
+    //    Spinner 下拉列表数据加载 样式、监听设置
+    public void initSpinner(){
+        // 初始化控件
+        Spinner spinner = (Spinner) findViewById(R.id.admin_role);
+        // 建立数据源
+        String[] mItems = getResources().getStringArray(R.array.Role);
+        // 建立Adapter并且绑定数据源
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, mItems);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //绑定 Adapter到控件
+        spinner .setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int pos, long id) {
+
+                String[] Roles = getResources().getStringArray(R.array.Role);
+//                if(!StringUtils.isBlank(Roles[pos])){
+//                    Toast.makeText(LoginActivity.this, "你选择了:"+Roles[pos], Toast.LENGTH_SHORT).show();
+//                }
+//                获取类别
+                role = Roles[pos];
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Another interface callback
+            }
+        });
+    }
+
 }
