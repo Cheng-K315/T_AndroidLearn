@@ -16,7 +16,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         ndk{
-            moduleName "hello-jni"
+            moduleName "NDKDemo"
             abiFilters "armeabi"
         }
     }

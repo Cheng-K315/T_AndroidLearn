@@ -15,6 +15,7 @@ public class FirstProvider extends ContentProvider {
     public int delete(Uri uri, String selection, String[] selectionArgs) {
         Log.d(TAG,uri.toString() + "===delete方法被调用===");
         Log.d(TAG,"where参数为：" + selection);
+        getContext().getContentResolver().notifyChange(uri,null);
         return 0;
     }
 
@@ -29,6 +30,7 @@ public class FirstProvider extends ContentProvider {
     public Uri insert(Uri uri, ContentValues values) {
         Log.d(TAG,uri.toString() + "===insert方法被调用===");
         Log.d(TAG,"value参数为：" + values);
+        getContext().getContentResolver().notifyChange(uri,null);
         return null;
     }
 
@@ -54,6 +56,7 @@ public class FirstProvider extends ContentProvider {
                       String[] selectionArgs) {
         Log.d(TAG,uri.toString() + "===update方法被调用===");
         Log.d(TAG,"where参数为：" + selection + ", value参数为：" + values);
+        getContext().getContentResolver().notifyChange(uri,null);
         return 0;
     }
 }

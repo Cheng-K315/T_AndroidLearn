@@ -1,2 +1,3 @@
+include ':NewModule'
 include ':app'
 rootProject.name = "FirstWeek"

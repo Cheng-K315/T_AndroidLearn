@@ -73,6 +73,7 @@ public class SecondActivity extends BaseActivity {
                 sendBroadcast(intent);
                 Toast.makeText(getApplicationContext(),"QQ发送消息成功!",Toast.LENGTH_LONG).show();
             }
+
         });
     }
 

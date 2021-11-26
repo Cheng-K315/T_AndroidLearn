@@ -7,10 +7,12 @@ import android.content.ComponentName;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.database.ContentObserver;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Binder;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
@@ -83,6 +85,8 @@ public class ThirdActivity extends BaseActivity {
 
     private class OnClick implements View.OnClickListener{
         private Uri uri = Uri.parse("content://com.learn.learndemo.firstprovider");
+        Wacher wacher = new Wacher(new Handler());
+
         @Override
         public void onClick(View v) {
             Intent intent = new Intent();
@@ -178,5 +182,21 @@ public class ThirdActivity extends BaseActivity {
     protected void onRestart() {
         super.onRestart();
         Log.d(TAG,"onRestart! and task id is "+this.getTaskId());
+    }
+
+    class Wacher extends ContentObserver {
+        /**
+         * Creates a content observer.
+         *
+         * @param handler The handler to run {@link #onChange} on, or null if none.
+         */
+        public Wacher(Handler handler) {
+            super(handler);
+        }
+
+        @Override
+        public void onChange(boolean selfChange) {
+            super.onChange(selfChange);
+        }
     }
 }

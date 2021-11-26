@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AidlDemo" parent="@android:style/Theme.NoTitleBar.Fullscreen">
+        <!-- Primary brand color. -->
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
